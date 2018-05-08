@@ -9,8 +9,8 @@ I wanted a way to immediately go to Google's first search result straight from t
 
 ## Usage in Chrome
 
-1. Install [https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo](Tampermonkey)
-2. Install [https://raw.githubusercontent.com/buysilver/ifl/master/ifl.user.js](ifl.user.js)
+1. Install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+2. Install [ifl.user.js](https://raw.githubusercontent.com/buysilver/ifl/master/ifl.user.js)
 3. Go to [chrome://settings/searchEngines](chrome://settings/searchEngines) and add ``https://www.google.com/?IM_FEELING_LUCKY_FAKE=%s``, optionally adding a Keyword such as ``!`` (which lets you invoke the search engine from the address bar by typing ``!`` first).
 ![dialog in Chrome settings showing what the configuration should look like](https://i.imgur.com/7v4AR7W.png)
 
