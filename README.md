@@ -1,13 +1,13 @@
 I'm Always Feeling Lucky
 ========================
 
-# Use this to use Google's I'm Feeling Lucky as a custom search engine
+Use this to use Google's I'm Feeling Lucky as a custom search engine
 
-## Why?
+# Why?
 
 I wanted a way to immediately go to Google's first search result straight from the address bar without going to the search results page first. This is already provided by "I'm Feeling Lucky". Then of course you can make that a custom search engine, right? The [often](https://www.addictivetips.com/web/add-googles-im-feeling-lucky-as-a-search-engine-in-your-browser/) [quoted](https://gist.github.com/buysilver/54928c23588a193f47092e263f92cbff) URLs for making a custom search engine for I'm Feeling Lucky work about 80% of the time. For some search queries, you get the full search results page. Your expectations being subverted like this can be very irritating. So the only way around this is basically what this does—run a userscript on Google's home page only (that simulates clicking I'm Feeling Lucky) invoked with a dummy URL search param that is referenced from the custom search engine URL.
 
-## Usage in Chrome
+# Usage in Chrome
 
 1. Install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 2. Install [ifl.user.js](https://raw.githubusercontent.com/buysilver/ifl/master/ifl.user.js)
