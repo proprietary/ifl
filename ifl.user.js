@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name		 I'm Always Feeling Lucky
-// @namespace	 http://github.com/buysilver
+// @namespace	 http://github.com/buysilver/ifl
+// @updateURL https://github.com/buysilver/ifl/raw/master/ifl.user.js
+// @downloadURL https://github.com/buysilver/ifl/raw/master/ifl.user.js
 // @version		 0.1
 // @description	 Helper for a browser custom search engine using Google's I'm Feeling Lucky that always goes directly to the first result
 // @author		 Zelly D. Snyder <zds@zds.ai>
