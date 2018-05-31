@@ -12,11 +12,26 @@
 // Usage:
 // Chrome: Make a new custom search engine with the string 'https://www.google.com/?IM_FEELING_LUCKY_FAKE=%s'
 
-(function() {
+function sleep(ms) {
+    return new Promise(function(resolve, reject) {
+        window.setTimeout(resolve, ms);
+    });
+}
+
+
+(async function() {
+	// First blur out the Google homepage while loading for aesthetics
+	document.body.style.filter = 'blur(1px)';
+
+	// Grab the search query string from the "fake" URL search param
 	let params = new URLSearchParams(new URL(window.location).search); // yeah, ES6—deal with it
 	let query = params.get('IM_FEELING_LUCKY_FAKE');
+	// Place the search query in the search box
 	let searchField = document.querySelector('#lst-ib');
 	searchField.value = query;
-	let imFeelingLuckyButton = document.querySelector('#gbqfbb');
+    searchField.blur();
+    await sleep(10); // necessary on MacOS for some reason
+	// Simulate a click of the I'm Feeling Lucky button
+	let imFeelingLuckyButton = document.querySelector('input[value="I\'m Feeling Lucky"]');
 	imFeelingLuckyButton.click();
-})()
+})();
