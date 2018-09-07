@@ -32,7 +32,8 @@ function sleep(ms) {
 	let searchField = document.querySelector('#lst-ib');
 	searchField.value = query;
     searchField.blur();
-    await sleep(10); // necessary on MacOS for some reason
+    document.body.style.backgroundColor = "#000";
+    // await sleep(10); // necessary on MacOS for some reason
 	// Simulate a click of the I'm Feeling Lucky button
 	let imFeelingLuckyButton = document.querySelector('input[value="I\'m Feeling Lucky"]');
 	imFeelingLuckyButton.click();
