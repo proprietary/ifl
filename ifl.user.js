@@ -23,18 +23,17 @@ function sleep(ms) {
 
 (async function() {
 	// First blur out the Google homepage while loading for aesthetics
-	document.body.style.filter = 'blur(1px)';
+	document.body.style.filter = 'blur(10px)';
 
 	// Grab the search query string from the "fake" URL search param
 	let params = new URLSearchParams(new URL(window.location).search); // yeah, ES6—deal with it
 	let query = params.get('IM_FEELING_LUCKY_FAKE');
 	// Place the search query in the search box
-	let searchField = document.querySelector('#lst-ib');
+	let searchField = document.querySelector('input[name="q"]');
 	searchField.value = query;
     searchField.blur();
-    document.body.style.backgroundColor = "#000";
-    // await sleep(10); // necessary on MacOS for some reason
+    await sleep(5); // necessary on MacOS for some reason
 	// Simulate a click of the I'm Feeling Lucky button
-	let imFeelingLuckyButton = document.querySelector('input[value="I\'m Feeling Lucky"]');
+	let imFeelingLuckyButton = document.querySelector('input[name="btnI"]');
 	imFeelingLuckyButton.click();
 })();
