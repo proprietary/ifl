@@ -22,8 +22,8 @@ function sleep(ms) {
 
 
 (async function() {
-	// First blur out the Google homepage while loading for aesthetics
-	document.body.style.filter = 'blur(10px)';
+	// First white out the visible Google homepage while loading for aesthetics
+	document.body.style.filter = 'opacity(0%)';
 
 	// Grab the search query string from the "fake" URL search param
 	let params = new URLSearchParams(new URL(window.location).search); // yeah, ES6—deal with it
