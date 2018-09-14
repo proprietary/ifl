@@ -17,7 +17,7 @@ Long story short, the only way around this is basically what this does—run a u
 # Usage in Chrome
 
 1. Install [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-2. Install [ifl.user.js](https://raw.githubusercontent.com/buysilver/ifl/master/ifl.user.js)
+2. Install [ifl.user.js](https://raw.githubusercontent.com/iappp/ifl/master/ifl.user.js)
 3. Go to [chrome://settings/searchEngines](chrome://settings/searchEngines) and add ``https://www.google.com/?IM_FEELING_LUCKY_FAKE=%s``, optionally adding a Keyword such as ``!`` (which lets you invoke the search engine from the address bar by typing ``!`` first).
 ![dialog in Chrome settings showing what the configuration should look like](https://i.imgur.com/7v4AR7W.png)
 
