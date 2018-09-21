@@ -11,17 +11,11 @@
 // @match https://www.google.com/?IM_FEELING_LUCKY_FAKE=*
 // ==/UserScript==
 
-// Usage:
-// Chrome: Make a new custom search engine with the string 'https://www.google.com/?IM_FEELING_LUCKY_FAKE=%s'
+// Usage on Chrome or Firefox:
+// 1. Install Tampermonkey
+// 2. Make a new custom search engine that searches 'https://www.google.com/?IM_FEELING_LUCKY_FAKE=%s'
 
-function sleep(ms) {
-    return new Promise(function(resolve, reject) {
-        window.setTimeout(resolve, ms);
-    });
-}
-
-
-(async function() {
+function ifl() {
 	// First white out the visible Google homepage while loading for aesthetics
 	document.body.style.filter = 'opacity(0%)';
 
@@ -32,8 +26,15 @@ function sleep(ms) {
 	let searchField = document.querySelector('input[name="q"]');
 	searchField.value = query;
     searchField.blur();
-    await sleep(5); // necessary on MacOS for some reason
 	// Simulate a click of the I'm Feeling Lucky button
 	let imFeelingLuckyButton = document.querySelector('input[name="btnI"]');
 	imFeelingLuckyButton.click();
+}
+
+(function() {
+    if (["complete", "loaded", "interactive"].include(document.readyState)) {
+        ifl();
+    } else {
+        document.addEventListener("DOMContentLoaded", ifl);
+    }
 })();
