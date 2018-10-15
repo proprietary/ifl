@@ -15,7 +15,13 @@
 // 1. Install Tampermonkey
 // 2. Make a new custom search engine that searches 'https://www.google.com/?IM_FEELING_LUCKY_FAKE=%s'
 
-function ifl() {
+/* function sleep(ms) {
+ *     return new Promise(function(resolve) {
+ *         window.setTimeout(resolve, ms);
+ *     });
+ * } */
+
+/*async */function ifl() {
 	// First white out the visible Google homepage while loading for aesthetics
 	document.body.style.filter = 'opacity(0%)';
 
@@ -26,13 +32,14 @@ function ifl() {
 	let searchField = document.querySelector('input[name="q"]');
 	searchField.value = query;
     searchField.blur();
+    /* await sleep(10); */
 	// Simulate a click of the I'm Feeling Lucky button
 	let imFeelingLuckyButton = document.querySelector('input[name="btnI"]');
 	imFeelingLuckyButton.click();
 }
 
 (function() {
-    if (["complete", "loaded", "interactive"].include(document.readyState)) {
+    if (["complete", "loaded", "interactive"].includes(document.readyState)) {
         ifl();
     } else {
         document.addEventListener("DOMContentLoaded", ifl);
