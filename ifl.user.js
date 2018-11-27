@@ -53,6 +53,8 @@ function waitUntil(condition, interval=10, timeout=60000) {
 	// Grab the search query string from the "fake" URL search param
 	let params = new URLSearchParams(new URL(window.location).search); // yeah, ES6—deal with it
 	let query = params.get('IM_FEELING_LUCKY_FAKE');
+    // Synthetically add the correct Google Search page to the history so that when the user navigates backward from their ``I'm Feeling Lucky'' result, they get the Google Search page they would have gotten had they searched normally
+    window.history.pushState({}, '', `https://www.google.com/search?q=${query}`);
 	// Place the search query in the search box
     try {
 	    let searchField = await waitUntil(() => document.querySelector('input[name="q"]'), 1);
